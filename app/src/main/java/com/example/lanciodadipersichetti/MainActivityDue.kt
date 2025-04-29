@@ -2,6 +2,7 @@ package com.example.lanciodadipersichetti
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
@@ -16,12 +17,16 @@ class MainActivityDue : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main_due)
 
+        val TAG = "MainActivityDue"
         val mioRandom = intent.getIntExtra("NUMERO", -1)
+        Log.d(TAG, "mioRandom: " + mioRandom)
         val continua = findViewById<Button>(R.id.continua)
 
         continua.setOnClickListener {
             val mioToast = Toast.makeText(this, "Risultato:", Toast.LENGTH_LONG)
             mioToast.show()
+
+            lanciaIntentTre(mioRandom)
         }
 
         val dado = findViewById<ImageView>(R.id.dado)
@@ -38,7 +43,7 @@ class MainActivityDue : AppCompatActivity() {
 
     private fun lanciaIntentTre(mioRandom: Int){
         val mioIntent = Intent(this, MainActivityTre::class.java)
-        mioIntent.putExtra("RANDOM", mioRandom)
+        mioIntent.putExtra("NUMERO", mioRandom)
         startActivity(mioIntent)
     }
 }

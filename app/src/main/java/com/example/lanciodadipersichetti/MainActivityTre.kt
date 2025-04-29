@@ -1,6 +1,7 @@
 package com.example.lanciodadipersichetti
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -12,10 +13,13 @@ class MainActivityTre : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main_tre)
 
+        val TAG = "MainActivityTre"
         val mioRandom = intent.getIntExtra("NUMERO", -1)
+        Log.d(TAG, "mioRandom: " + mioRandom)
         val risultato = findViewById<TextView>(R.id.risultato)
+        val numeriFortunati = listOf(2, 4)
 
-        if(mioRandom == 2 || mioRandom == 4){ // Numeri fortunati
+        if(mioRandom in numeriFortunati){ // Numeri fortunati
             risultato.text = "Hai vinto!!!!"
         }
         else{
