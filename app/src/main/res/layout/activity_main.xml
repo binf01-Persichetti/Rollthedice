@@ -7,13 +7,41 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <Button
+        android:id="@+id/btnRoll"
+        android:layout_width="141dp"
+        android:layout_height="78dp"
+        android:layout_marginBottom="80dp"
+        android:text="Lancia"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/dadi"
+        app:layout_constraintVertical_bias="0.731" />
 
+    <ImageView
+        android:id="@+id/dadi"
+        android:layout_width="322dp"
+        android:layout_height="248dp"
+        android:layout_marginBottom="292dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/dices" />
+
+    <TextView
+        android:id="@+id/titolo"
+        android:layout_width="338dp"
+        android:layout_height="89dp"
+        android:layout_marginBottom="84dp"
+        android:text="Roll the dice"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/dadi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.602"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
