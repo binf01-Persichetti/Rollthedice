@@ -1,5 +1,6 @@
 package com.example.lanciodadipersichetti
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -33,5 +34,11 @@ class MainActivityDue : AppCompatActivity() {
             else -> {R.drawable.dice_face_6}
         }
         dado.setImageResource(arrayDadi as Int)
+    }
+
+    private fun lanciaIntentTre(mioRandom: Int){
+        val mioIntent = Intent(this, MainActivityTre::class.java)
+        mioIntent.putExtra("RANDOM", mioRandom)
+        startActivity(mioIntent)
     }
 }
